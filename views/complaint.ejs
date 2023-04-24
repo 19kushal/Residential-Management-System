@@ -193,7 +193,11 @@
             <p class="answer"><%= complaint.content %>
             </p>
         </div>
-        <img src=".\uploads/<%= complaint.image %>" alt="image" class="an-img">
+        <% if(!complaint.image){ %>
+          <div></div>
+      <% } else{ %>
+          <img src=".\uploads/<%= complaint.image %>" alt="image" class="an-img">
+          <% } %>
     </div>
     <% }) %>
 </section>

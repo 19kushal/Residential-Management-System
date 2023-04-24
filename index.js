@@ -290,11 +290,11 @@ app.get("/ad-comPanel", async (req, res) => {
 // add Complaint(tested)
 app.post("/addComplaint", upload, async (req, res) => {
   try {
-    if(req.file){
+    if(!req.file){
       const complaint = new Complaint({
         title: req.body.title,
       content: req.body.content,
-      image: req.file.filename,
+      // image: req.file.filename,
       link: req.body.link,
     });
     await complaint.save();
@@ -307,7 +307,7 @@ app.post("/addComplaint", upload, async (req, res) => {
     image: req.file.filename,
     link: req.body.link,
   });
-  image = '';
+  // image = '';
   await complaint.save();
   console.log("Complaint added");
   res.redirect("/comPanel");
@@ -321,11 +321,11 @@ app.post("/addComplaint", upload, async (req, res) => {
 // add ADMIN Complaint(tested)
 app.post("/ad-addComplaint", upload, async (req, res) => {
   try {
-    if(req.file){
+    if(!req.file){
       const complaint = new Complaint({
         title: req.body.title,
       content: req.body.content,
-      image: req.file.filename,
+      // image: req.file.filename,
       link: req.body.link,
     });
     await complaint.save();
@@ -338,7 +338,7 @@ app.post("/ad-addComplaint", upload, async (req, res) => {
     image: req.file.filename,
     link: req.body.link,
   });
-  image = '';
+  // image = '';
   await complaint.save();
   console.log("Complaint added");
   res.redirect("/ad-comPanel");

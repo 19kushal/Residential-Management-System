@@ -22,22 +22,25 @@
         }
         body{
             color: white;
-           background-color: #001E2B;
+           background-color: #00374f;
+           overflow: hidden;
         }
         .navbar{
-            color: #ffffff !important;
-            background-color: #00684a;
+            color: #00ED64 !important;
+            background-color: #001E2B;
         }
         .nav-link{
             padding: 0 2rem !important;
-            /* font-weight: 400 !important; */
-            color: #ffffff !important;
+            color: #00ED64 !important;
         }
+        .nav-link:hover{
+            color: #ffffff !important;
+          }
         .navbar-brand{
             font-weight: 600 !important;
         }
         .section-head{
-            background-color: #001E2B;
+            background-color: #00374f;
             padding: 2rem;
             text-align: center;
         }
@@ -77,24 +80,27 @@
       </nav>
     <div class="section-head"><h1>Residents</h1></div>
     <section id="resi">
-        <div class="row">
-            <div class="col-2">Name</div>
-            <div class="col-2">Contact</div>
-            <div class="col-2">Wing</div>
-            <div class="col-2">Floor</div>
-            <div class="col-2">Flat</div>
-            <div class="col-2">Type of Resident</div>
-        </div> 
-        <% users.forEach(users=>{ %>
-        <div class="row">
-            <div class="col-2"> <%= users.name %></div>
-            <div class="col-2"> <%= users.contact %></div>
-            <div class="col-2"> <%= users.wing %></div>
-            <div class="col-2"> <%= users.floor %></div>
-            <div class="col-2"> <%= users.flat %></div>
-            <div class="col-2"> <%= users.resiType %></div>
-        </div>
-        <% }) %>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-2">Name</div>
+                <div class="col-2">Contact</div>
+                <div class="col-2">Wing</div>
+                <div class="col-2">Floor</div>
+                <div class="col-2">Flat</div>
+                <div class="col-2">Type of Resident</div>
+            </div> 
+            <% users.forEach(users=>{ %>
+                <div class="row">
+                    <div class="col-2"> <%= users.name %></div>
+                    <div class="col-2"> <%= users.contact %></div>
+                    <div class="col-2"> <%= users.wing %></div>
+                    <div class="col-2"> <%= users.floor %></div>
+                    <div class="col-2"> <%= users.flat %></div>
+                    <div class="col-2"> <%= users.resiType %></div>
+                </div>
+                <% }) %>
+            </div>
     </section>
        
 </body>
